@@ -68,7 +68,7 @@ end)
 RegisterCommand(Config.CallHelpCommand, function(source, args, rawCommand)
     local message = ""
     for i=1, #args, 1 do 
-        message = message .. args[i]
+        message = message .. ' ' ..args[i]
     end
     if message == "" or message == " " then 
         message = _U('noMessage')
@@ -78,14 +78,26 @@ end)
 
 RegisterNetEvent("lama_admin:showNotify")
 AddEventHandler("lama_admin:showNotify", function(name, id, message)
+    
     if Config.NotifySystem  == 'chat' then
+        if Config.UseSound == true then TriggerServerEvent('InteractSound_SV:PlayOnSource', Config.SoundName, Config.SoundVolume) end
 
     elseif Config.NotifySystem == 'esx' then
+        if Config.UseSound == true then TriggerServerEvent('InteractSound_SV:PlayOnSource', Config.SoundName, Config.SoundVolume) end
         ESX.ShowNotification(_U('notifyMessage', name, id, message))
 
-    elseif Config.NotifySystem == 'pNotify' then
+    elseif Config.NotifySystem == 'pNotify' or Config.NotifySystem == 'pnotify' then
+        if Config.UseSound == true then TriggerServerEvent('InteractSound_SV:PlayOnSource', Config.SoundName, Config.SoundVolume) end
+        TriggerEvent("pNotify:SendNotification", {
+            text = _U('notifyMessage', name, id, message),
+            type = "warning",
+            timeout = math.random(1000, 10000), 
+            layout = "centerLeft",
+            queue = "left"
+        })
 
     elseif Config.NotifySystem == 'okokChatV2' then
+        if Config.UseSound == true then TriggerServerEvent('InteractSound_SV:PlayOnSource', Config.SoundName, Config.SoundVolume) end
 
     else
         print("Invalid Notify System")

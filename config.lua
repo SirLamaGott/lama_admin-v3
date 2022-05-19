@@ -1,7 +1,7 @@
 Config = {}
 
 Config.Locale = 'en'
-Config.NotifySystem = 'chat' -- Available: chat, okokChatV2, esx, pNotify 
+Config.NotifySystem = 'esx' -- Available: esx, pNotify, okokChatV2, chat 
 Config.staffGroups = {'superadmin', 'admin', 'mod', 'dev', 'supporter'}
 Config.GodMode = true
 
@@ -10,6 +10,7 @@ Config.CallHelpCommand = 'calladmin'
 
 Config.UseSound = false -- requires: https://github.com/plunkettscott/interact-sound
 Config.SoundName = 'example' -- name of the sound that should be played when staff gets messaged
+Config.SoundVolume = 1.0 
 
 Config.Ranks = {
     superadmin = {

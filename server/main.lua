@@ -19,7 +19,7 @@ end)
 -- CALL ADMIN
 RegisterServerEvent('lama_admin:callAdmin')
 AddEventHandler("lama_admin:callAdmin", function(message) 
-    local xPlayer = ESX.GetPlayerFromId(source)
+    local xPlayer = ESX.GetPlayerFromId(source) 
     
     for k, playerID in pairs(GetPlayers()) do
         local xTarget = ESX.GetPlayerFromId(playerID)

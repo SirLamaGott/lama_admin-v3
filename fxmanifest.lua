@@ -19,7 +19,7 @@ client_scripts {
 	'client/main.lua'
 }
 dependencies {
-	'es_extended' 
+	'es_extended'  
 } 
 
 escrow_ignore {
