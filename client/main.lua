@@ -101,10 +101,10 @@ AddEventHandler("lama_admin:showNotify", function(name, id, message)
             queue = "left"
         })
 
-    elseif Config.NotifySystem == 'okokChatV2' then
+    elseif Config.NotifySystem == 'okokChatV2' then 
         if Config.UseSound == true then TriggerServerEvent('InteractSound_SV:PlayOnSource', Config.SoundName, Config.SoundVolume) end
-
+        exports['okokChatV2']:Message('linear-gradient(90deg, rgb(0 32 51) 0%, rgb(0 132 210 / 90%) 100%)', '#00d0ff', 'fas fa-bell', '', _U('title'), _U('notifyMessage', name, id, message), source)
     else
-        print("Invalid Notify System")
+        print("[LAMA_ADMIN] - This NotifySystem is not supported, change in config!")
     end
 end)

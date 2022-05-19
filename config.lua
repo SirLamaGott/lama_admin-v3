@@ -2,6 +2,7 @@ Config = {}
 
 Config.Locale = 'en'
 Config.NotifySystem = 'esx' -- Available: esx, pNotify, okokChatV2, chat 
+Config.AcceptSystem = 'waypoint' -- what should happen when you accept a report? Available: waypoint, teleport
 Config.staffGroups = {'superadmin', 'admin', 'mod', 'dev', 'supporter'}
 Config.GodMode = true
 
@@ -9,8 +10,8 @@ Config.DutyCommand = 'aduty'
 Config.CallHelpCommand = 'calladmin'  
 
 Config.UseSound = false -- requires: https://github.com/plunkettscott/interact-sound
-Config.SoundName = 'example' -- name of the sound that should be played when staff gets messaged
-Config.SoundVolume = 1.0 
+Config.SoundName = 'demo' -- name of the sound that should be played when staff gets messaged
+Config.SoundVolume = 1.0  -- volume of the sound 
 
 Config.Ranks = {
     superadmin = {
