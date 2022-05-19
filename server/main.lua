@@ -24,15 +24,15 @@ end, false)
 
 -- CALL ADMIN
 RegisterServerEvent('lama_admin:callAdmin')
-AddEventHandler("lama_admin:callAdmin", function(message)
+AddEventHandler("lama_admin:callAdmin", function(message) 
     local xPlayer = ESX.GetPlayerFromId(source)
-    local staffGroups = {'superadmin', 'admin', 'mod', 'dev', 'support'}
+    
 
     for k, playerID in pairs(GetPlayers()) do
         local xTarget = ESX.GetPlayerFromId(playerID)
         local targetGroup = xTarget.getGroup()
 
-        for i, allowedRanks in pairs(staffGroups) do
+        for i, allowedRanks in pairs(Config.staffGroups) do
             if targetGroup == allowedRanks then
                 print("Spieler Gruppe: "..targetGroup.." | Erlaubte Ranks: "..allowedRanks)
                 TriggerClientEvent("lama_admin:showNotify", xTarget.source, xPlayer.name, xPlayer.source, message)

@@ -60,7 +60,7 @@ AddEventHandler("lama_admin:toggleDuty", function(source)
 end) 
 
 -- CALL ADMIN
-RegisterCommand("support", function(source, args, rawCommand)
+RegisterCommand(Config.CallHelpCommand, function(source, args, rawCommand)
     local message = ""
     for i=1, #args, 1 do 
         message = message .. args[i]

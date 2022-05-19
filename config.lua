@@ -6,7 +6,8 @@ Config.NotifySystem = 'default' -- Available: chat, okokChatV2, esx, pNotify
 Config.DutyCommand = 'aduty'
 Config.GodMode = true
 
-Config.CallAdminCommand = 'calladmin' 
+Config.CallHelpCommand = 'support' 
+Config.staffGroups = {'superadmin', 'admin', 'mod', 'dev', 'support'}
 
 Config.Ranks = {
     superadmin = {
