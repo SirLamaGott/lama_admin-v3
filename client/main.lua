@@ -81,7 +81,12 @@ AddEventHandler("lama_admin:showNotify", function(name, id, message)
     
     if Config.NotifySystem  == 'chat' then
         if Config.UseSound == true then TriggerServerEvent('InteractSound_SV:PlayOnSource', Config.SoundName, Config.SoundVolume) end
-
+        TriggerEvent('chat:addMessage', {
+            color = {255, 0, 0},
+            multiline = true,
+            args = {_U('title'), _U('notifyMessage', name, id, message)}  
+          })
+          
     elseif Config.NotifySystem == 'esx' then
         if Config.UseSound == true then TriggerServerEvent('InteractSound_SV:PlayOnSource', Config.SoundName, Config.SoundVolume) end
         ESX.ShowNotification(_U('notifyMessage', name, id, message))
