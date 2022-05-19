@@ -69,5 +69,14 @@ RegisterCommand(Config.CallHelpCommand, function(source, args, rawCommand)
 end)
 RegisterNetEvent("lama_admin:showNotify")
 AddEventHandler("lama_admin:showNotify", function(name, id, message)
+    if Config.NotifySystem  == 'chat' then
 
+    elseif Config.NotifySystem == 'esx' then
+        ESX.ShowNotification((_U('notifyMessage')):format(name, id, message))
+    elseif Config.NotifySystem == 'pNotify' then
+
+    elseif Config.NotifySystem == 'okokChatV2' then
+
+    else
+        print("Invalid Notify System")
 end)
