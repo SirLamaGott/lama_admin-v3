@@ -1,4 +1,4 @@
 Locales['en'] = {
-    ['showNotify'] = 'Player %s (%s) requested staff! \nMessage: %s',
-    ['otherThing'] = 'Kosten: ~r~$%s'
+    ['notifyMessage'] = 'Player %s (%s) requested staff! \nMessage: %s',
+    ['noMessage'] = 'No message.'
 }

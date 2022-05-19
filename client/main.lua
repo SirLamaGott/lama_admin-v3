@@ -43,6 +43,11 @@ function setUniform(playerPed)
     end)
 end
 
+-- CLOTHES
+RegisterCommand(Config.DutyCommand, function(source, args)
+	TriggerClientEvent("lama_admin:toggleDuty", source)
+end, false) 
+
 RegisterNetEvent("lama_admin:toggleDuty")
 AddEventHandler("lama_admin:toggleDuty", function(source)
     local playerPed = PlayerPedId()
@@ -65,18 +70,24 @@ RegisterCommand(Config.CallHelpCommand, function(source, args, rawCommand)
     for i=1, #args, 1 do 
         message = message .. args[i]
     end
+    if message == "" or message == " " then 
+        message = _U('noMessage')
+    end
     TriggerServerEvent("lama_admin:callAdmin", message)
 end)
+
 RegisterNetEvent("lama_admin:showNotify")
 AddEventHandler("lama_admin:showNotify", function(name, id, message)
     if Config.NotifySystem  == 'chat' then
 
     elseif Config.NotifySystem == 'esx' then
-        ESX.ShowNotification((_U('notifyMessage')):format(name, id, message))
+        ESX.ShowNotification(_U('notifyMessage', name, id, message))
+
     elseif Config.NotifySystem == 'pNotify' then
 
     elseif Config.NotifySystem == 'okokChatV2' then
 
     else
         print("Invalid Notify System")
+    end
 end)

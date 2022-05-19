@@ -6,9 +6,9 @@ Config.staffGroups = {'superadmin', 'admin', 'mod', 'dev', 'supporter'}
 Config.GodMode = true
 
 Config.DutyCommand = 'aduty'
-Config.CallHelpCommand = 'calladmin' 
+Config.CallHelpCommand = 'calladmin'  
 
-Config.UseSound = true -- requires: https://github.com/plunkettscott/interact-sound
+Config.UseSound = false -- requires: https://github.com/plunkettscott/interact-sound
 Config.SoundName = 'example' -- name of the sound that should be played when staff gets messaged
 
 Config.Ranks = {
