@@ -58,3 +58,16 @@ AddEventHandler("lama_admin:toggleDuty", function(source)
 		if Config.GodMode then SetEntityInvincible(playerPed, true) end
     end 
 end) 
+
+-- CALL ADMIN
+RegisterCommand("support", function(source, args, rawCommand)
+    local message = ""
+    for i=1, #args, 1 do 
+        message = message .. args[i]
+    end
+    TriggerServerEvent("lama_admin:callAdmin", message)
+end)
+RegisterNetEvent("lama_admin:showNotify")
+AddEventHandler("lama_admin:showNotify", function(name, id, message)
+
+end)

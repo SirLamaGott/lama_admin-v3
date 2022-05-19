@@ -34,7 +34,8 @@ AddEventHandler("lama_admin:callAdmin", function(message)
 
         for i, allowedRanks in pairs(staffGroups) do
             if targetGroup == allowedRanks then
-                -- Trigger Show Support 
+                print("Spieler Gruppe: "..targetGroup.." | Erlaubte Ranks: "..allowedRanks)
+                TriggerClientEvent("lama_admin:showNotify", xTarget.source, xPlayer.name, xPlayer.source, message)
             end
         end
 
