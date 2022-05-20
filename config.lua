@@ -2,7 +2,6 @@ Config = {}
 
 Config.Locale = 'en'
 Config.NotifySystem = 'esx' -- Available: esx, pNotify, okokChatV2, chat 
-Config.AcceptSystem = 'waypoint' -- what should happen when you accept a report? Available: waypoint, teleport
 Config.staffGroups = {'superadmin', 'admin', 'mod', 'dev', 'supporter'}
 Config.GodMode = true
 
