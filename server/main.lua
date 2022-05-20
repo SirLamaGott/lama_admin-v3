@@ -16,6 +16,11 @@ ESX.RegisterServerCallback("lama_admin:getRankFromPlayer", function(source, cb)
     end
 end)
 
+-- CLOTHES
+RegisterCommand(Config.DutyCommand, function(source, args)
+	TriggerClientEvent("lama_admin:toggleDuty", source)
+end, false) 
+
 -- CALL ADMIN
 RegisterServerEvent('lama_admin:callAdmin')
 AddEventHandler("lama_admin:callAdmin", function(message) 

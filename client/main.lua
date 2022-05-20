@@ -43,11 +43,6 @@ function setUniform(playerPed)
     end)
 end
 
--- CLOTHES
-RegisterCommand(Config.DutyCommand, function(source, args)
-	TriggerClientEvent("lama_admin:toggleDuty", source)
-end, false) 
-
 RegisterNetEvent("lama_admin:toggleDuty")
 AddEventHandler("lama_admin:toggleDuty", function(source)
     local playerPed = PlayerPedId()
