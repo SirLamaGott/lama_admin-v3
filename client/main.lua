@@ -68,11 +68,13 @@ RegisterCommand(Config.CallHelpCommand, function(source, args, rawCommand)
     if message == "" or message == " " then 
         message = _U('noMessage')
     end
-    TriggerServerEvent("lama_admin:callAdmin", message)
+
+    local senderPosition = GetEntityCoords(PlayerPedId())
+    TriggerServerEvent("lama_admin:callAdmin", message, senderPosition)
 end)
 
 RegisterNetEvent("lama_admin:showNotify")
-AddEventHandler("lama_admin:showNotify", function(name, id, message)
+AddEventHandler("lama_admin:showNotify", function(name, id, message, pos)
     
     if Config.NotifySystem  == 'chat' then
         if Config.UseSound == true then TriggerServerEvent('InteractSound_SV:PlayOnSource', Config.SoundName, Config.SoundVolume) end
@@ -101,5 +103,17 @@ AddEventHandler("lama_admin:showNotify", function(name, id, message)
         exports['okokChatV2']:Message('linear-gradient(90deg, rgb(0 32 51) 0%, rgb(0 132 210 / 90%) 100%)', '#00d0ff', 'fas fa-bell', '', _U('title'), _U('notifyMessage', name, id, message), source)
     else
         print("[LAMA_ADMIN] - This Notify System is not supported, change in config!")
+    end
+
+    if Config.AcceptMethod == 'waypoint' or Config.AcceptMethod == 'Waypoint' then
+        SetTextComponentFormat('STRING')
+        AddTextComponentString('Drücke ~INPUT_CONTEXT~ um einen Wegpunkt zu setzen oder ~INPUT_DETONATE~, um abzulehnen.')
+        DisplayHelpTextFromStringLabel(0, 0, 1, -1)
+
+        if IsControlJustReleased(0, 38) then
+           --SetEntityCoords(PlayerPedId(), pos.x, pos.y, pos.z + 0.5)
+           print("X: "..pos.x.." Y: "..pos.y)
+            SetNewWaypoint(pos.x, pos.y)
+        end
     end
 end)

@@ -2,9 +2,9 @@ fx_version 'cerulean'
 games {'gta5'}
 lua54 'yes'
 
-author 'SirLamaGott'
-description 'Lama - Admin v2'
-version '0.2.0'
+author 'SirLamaGott, myScripts'
+description 'Lama - Admin'
+version '0.3.0'
 
 shared_script 'config.lua'
 

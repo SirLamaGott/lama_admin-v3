@@ -5,6 +5,8 @@ Config.NotifySystem = 'esx' -- Available: esx, pNotify, okokChatV2, chat
 Config.staffGroups = {'superadmin', 'admin', 'mod', 'dev', 'supporter'}
 Config.GodMode = true
 
+Config.AcceptMethod = 'waypoint' -- Available: waypoint, teleport
+
 Config.DutyCommand = 'aduty'
 Config.CallHelpCommand = 'calladmin'  
 

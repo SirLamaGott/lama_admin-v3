@@ -23,7 +23,7 @@ end, false)
 
 -- CALL ADMIN
 RegisterServerEvent('lama_admin:callAdmin')
-AddEventHandler("lama_admin:callAdmin", function(message) 
+AddEventHandler("lama_admin:callAdmin", function(message, senderPosition) 
     local xPlayer = ESX.GetPlayerFromId(source) 
     
     for k, playerID in pairs(GetPlayers()) do
@@ -32,7 +32,7 @@ AddEventHandler("lama_admin:callAdmin", function(message)
 
         for i, allowedRanks in pairs(Config.staffGroups) do
             if targetGroup == allowedRanks then
-                TriggerClientEvent("lama_admin:showNotify", xTarget.source, xPlayer.name, xPlayer.source, message)
+                TriggerClientEvent("lama_admin:showNotify", xTarget.source, xPlayer.name, xPlayer.source, message, senderPosition)
             end
         end
 
