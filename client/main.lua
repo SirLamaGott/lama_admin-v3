@@ -111,20 +111,23 @@ Citizen.CreateThread(function()
         local ped = PlayerPedId()
         local pedCoords = GetEntityCoords(ped)
         
-        if disable <= 2 then
+        --if disable <= 2 then
             sleep = 0 -- Looping every frame
 
             ESX.ShowHelpNotification('Press ~INPUT_CONTEXT~ to respond to the request or press ~INPUT_DETONATE~, to deny that request.', false, true)
             if IsControlJustReleased(2, 38) then
                 if Config.AcceptMethod == 'waypoint' or Config.AcceptMethod == 'Waypoint' then
                     SetNewWaypoint(pos.x, pos.y)
+					break
                 else
                     SetEntityCoords(ped, pos.x, pos.y, pos.z + 0.5)
+					break
                 end
+				
             elseif IsControlJustReleased(2, 47) then
                 break
             end
-        end
+       -- end
 
         Citizen.Wait(sleep)
     end
